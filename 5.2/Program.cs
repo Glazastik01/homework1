@@ -1,46 +1,39 @@
 ﻿
 
-int[] InitArray(int dimension)
+namespace mass
 {
-    int[] array = new int[dimension];
-    Random rnd = new Random();
-
-    for (int i = 0; i < dimension; i++)
+    internal class Program
     {
-        array[i] = rnd.Next(10, 100);
+        static void Main(string[] args)
+        {
+            int[] arr = new int[50];
+            Random random = new Random();
+            for(int i = 0; i < arr.Length; i++)
+            {
+                arr[i] = random.Next(0, 1000);
+            }
+            Console.WriteLine($"Минимальное и максимальное значения массива: {string.Join(" ", MaxMin(arr))}");
+        }
+
+        public static int[] MaxMin(int[] arr)
+        {
+            int[] maxmin = new int[2];
+            int max = 0, min = 100;
+            for(int i = 0; i < arr.Length; i++)
+            {
+                if(arr[i] < min)
+                {
+                    min = arr[i];
+                    maxmin[0] = min;
+                }
+
+                if (arr[i] > max)
+                {
+                    max = arr[i];
+                    maxmin[1] = max;
+                }
+            }
+            return maxmin;
+        }
     }
-
-    return array;
 }
-
-void PrintArray(int[] array)
-{
-    for (int i = 0; i < array.Length; i++)
-    {
-        Console.Write($"{array[i]} ");
-    }
-
-    Console.WriteLine();
-}
-
-Random rnd = new Random();
-int r = rnd.Next(100);
-
-int dimension = r;
-int[] array = InitArray(dimension);
-
-static int[] mami(){
-    int[] arr = new int [2];
-    for(int i = 0; i < array.Length; i++){
-
-    }
-    return
-}
-
-
-
-
-PrintArray(array);
-int a = (array);
-
-Console.WriteLine();
