@@ -12,6 +12,7 @@ namespace mass
             {
                 arr[i] = random.Next(0, 1000);
             }
+            Console.WriteLine($"{string.Join(" ", arr)}");
             Console.WriteLine($"Минимальное и максимальное значения массива: {string.Join(" ", MaxMin(arr))}");
         }
 
